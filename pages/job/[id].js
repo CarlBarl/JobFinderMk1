@@ -72,14 +72,14 @@ export default function JobDetailsPage() {
   
   // Format date for display
   const formatDate = (dateString) => {
-    if (!dateString) return 'Not specified';
+    if (!dateString) return 'Ej angivet';
     return new Date(dateString).toLocaleDateString('sv-SE');
   };
   
   return (
     <Layout 
-      title={job ? `${job.headline} | StudentJobs` : 'Loading Job Details'}
-      description={job ? `${job.headline} at ${job.employer?.name || 'Company'} - Apply now!` : 'Job details page'}
+      title={job ? `${job.headline} | StudentJobs` : 'Laddar jobbdetaljer'}
+      description={job ? `${job.headline} hos ${job.employer?.name || 'Företaget'} - Sök nu!` : 'Jobbdetaljer'}
     >
       {/* Back Button */}
       <div className="bg-secondary-50 border-b border-secondary-100">
@@ -88,7 +88,7 @@ export default function JobDetailsPage() {
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            Back to search results
+            Tillbaka till sökresultat
           </Link>
         </div>
       </div>
@@ -101,7 +101,7 @@ export default function JobDetailsPage() {
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            <p className="mt-6 text-xl text-secondary-700">Loading job details...</p>
+            <p className="mt-6 text-xl text-secondary-700">Laddar jobbdetaljer...</p>
           </div>
         </div>
       )}
@@ -113,13 +113,13 @@ export default function JobDetailsPage() {
             <svg className="w-16 h-16 mx-auto mb-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <h2 className="text-xl font-semibold mb-3">Error</h2>
+            <h2 className="text-xl font-semibold mb-3">Fel</h2>
             <p className="mb-6 text-red-600">{error}</p>
             <button 
               onClick={() => router.back()} 
               className="inline-flex items-center px-5 py-2.5 border border-transparent text-base font-medium rounded-lg shadow-soft text-white bg-red-600 hover:bg-red-700 transition-colors"
             >
-              Go Back
+              Gå tillbaka
             </button>
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function JobDetailsPage() {
                 <div className="w-20 h-20 bg-primary-50 rounded-lg mr-6 mb-5 md:mb-0 relative overflow-hidden flex-shrink-0 border border-gray-100">
                   <Image 
                     src={logoSrc || '/file.svg'}
-                    alt={`${job.employer?.name || 'Company'} logo`}
+                    alt={`${job.employer?.name || 'Företaget'} logotyp`}
                     width={80}
                     height={80}
                     className="object-contain p-2"
@@ -150,7 +150,7 @@ export default function JobDetailsPage() {
                 {/* Job Info */}
                 <div className="flex-1">
                   <h1 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-2">{job.headline}</h1>
-                  <p className="text-xl text-primary-700 font-medium mb-5">{job.employer?.name || 'Company'}</p>
+                  <p className="text-xl text-primary-700 font-medium mb-5">{job.employer?.name || 'Företaget'}</p>
                   
                   <div className="flex flex-wrap gap-3 mb-5">
                     {job.workplace_address?.municipality && (
@@ -195,25 +195,25 @@ export default function JobDetailsPage() {
                         <svg className="w-4 h-4 mr-1.5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        Remote
+                        Distansarbete
                       </span>
                     )}
                   </div>
                   
                   <div className="flex flex-wrap gap-x-8 text-sm text-secondary-600">
                     <div className="w-auto mb-2">
-                      <span className="font-medium text-secondary-700">Posted:</span> {formatDate(job.publication_date)}
+                      <span className="font-medium text-secondary-700">Publicerad:</span> {formatDate(job.publication_date)}
                     </div>
                     
                     {job.application_deadline && (
                       <div className="w-auto mb-2">
-                        <span className="font-medium text-secondary-700">Apply by:</span> {formatDate(job.application_deadline)}
+                        <span className="font-medium text-secondary-700">Sök senast:</span> {formatDate(job.application_deadline)}
                       </div>
                     )}
                     
                     {job.numberofvacancies > 0 && (
                       <div className="w-auto mb-2">
-                        <span className="font-medium text-secondary-700">Positions:</span> {job.numberofvacancies}
+                        <span className="font-medium text-secondary-700">Antal tjänster:</span> {job.numberofvacancies}
                       </div>
                     )}
                   </div>
@@ -230,7 +230,7 @@ export default function JobDetailsPage() {
                     <svg className="w-5 h-5 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    Job Description
+                    Arbetsbeskrivning
                   </h2>
                   
                   {job.description?.text_formatted ? (
@@ -245,7 +245,7 @@ export default function JobDetailsPage() {
                       ))}
                     </div>
                   ) : (
-                    <p className="text-secondary-500 italic">No description provided</p>
+                    <p className="text-secondary-500 italic">Ingen beskrivning tillgänglig</p>
                   )}
                 </div>
                 
@@ -256,13 +256,13 @@ export default function JobDetailsPage() {
                       <svg className="w-5 h-5 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                       </svg>
-                      Requirements
+                      Kvalifikationer
                     </h2>
                     
                     {/* Must Have Skills */}
                     {job.must_have?.skills?.length > 0 && (
                       <div className="mb-6">
-                        <h3 className="font-medium text-lg mb-3 text-secondary-700">Required Skills</h3>
+                        <h3 className="font-medium text-lg mb-3 text-secondary-700">Krav</h3>
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-secondary-700">
                           {job.must_have.skills.map((skill, index) => (
                             <li key={index} className="flex items-start">
@@ -279,7 +279,7 @@ export default function JobDetailsPage() {
                     {/* Nice to Have Skills */}
                     {job.nice_to_have?.skills?.length > 0 && (
                       <div>
-                        <h3 className="font-medium text-lg mb-3 text-secondary-700">Nice to Have</h3>
+                        <h3 className="font-medium text-lg mb-3 text-secondary-700">Meriterande</h3>
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-secondary-700">
                           {job.nice_to_have.skills.map((skill, index) => (
                             <li key={index} className="flex items-start">
@@ -304,7 +304,7 @@ export default function JobDetailsPage() {
                     <svg className="w-5 h-5 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    Apply for this job
+                    Sök tjänsten
                   </h2>
                   
                   {job.source_links && job.source_links.length > 0 ? (
@@ -314,7 +314,7 @@ export default function JobDetailsPage() {
                       rel="noopener noreferrer" 
                       className="block w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium py-3.5 px-5 rounded-lg text-center transition-all duration-200 shadow-soft hover:shadow-soft-md hover:-translate-y-0.5"
                     >
-                      Apply on {job.source_links[0].label || 'Source Site'}
+                      Sök på {job.source_links[0].label || 'källsidan'}
                     </a>
                   ) : job.application_details?.url ? (
                     <a 
@@ -323,18 +323,18 @@ export default function JobDetailsPage() {
                       rel="noopener noreferrer" 
                       className="block w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium py-3.5 px-5 rounded-lg text-center transition-all duration-200 shadow-soft hover:shadow-soft-md hover:-translate-y-0.5"
                     >
-                      Apply Now
+                      Sök nu
                     </a>
                   ) : job.application_details?.email ? (
                     <a 
-                      href={`mailto:${job.application_details.email}?subject=Application for ${job.headline}`} 
+                      href={`mailto:${job.application_details.email}?subject=Ansökan: ${job.headline}`} 
                       className="block w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium py-3.5 px-5 rounded-lg text-center transition-all duration-200 shadow-soft hover:shadow-soft-md hover:-translate-y-0.5"
                     >
-                      Apply via Email
+                      Sök via e-post
                     </a>
                   ) : (
                     <div className="text-secondary-600 italic text-center p-4 border border-secondary-200 rounded-lg bg-secondary-50">
-                      See job description for application instructions
+                      Se arbetsbeskrivningen för ansökningsinstruktioner
                     </div>
                   )}
                   
@@ -343,7 +343,7 @@ export default function JobDetailsPage() {
                       <svg className="w-4 h-4 mr-1.5 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
-                      Application deadline: <span className="font-medium ml-1">{formatDate(job.application_deadline)}</span>
+                      Sista ansökningsdag: <span className="font-medium ml-1">{formatDate(job.application_deadline)}</span>
                     </div>
                   )}
                 </div>
@@ -354,18 +354,18 @@ export default function JobDetailsPage() {
                     <svg className="w-5 h-5 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
-                    Company Information
+                    Om företaget
                   </h2>
                   
                   <div className="space-y-4">
                     <div>
-                      <h3 className="font-medium text-secondary-700">Company</h3>
-                      <p className="text-secondary-600">{job.employer?.name || 'Not specified'}</p>
+                      <h3 className="font-medium text-secondary-700">Företag</h3>
+                      <p className="text-secondary-600">{job.employer?.name || 'Ej angivet'}</p>
                     </div>
                     
                     {job.employer?.website && (
                       <div>
-                        <h3 className="font-medium text-secondary-700">Website</h3>
+                        <h3 className="font-medium text-secondary-700">Webbplats</h3>
                         <a 
                           href={job.employer.website} 
                           target="_blank" 
@@ -379,7 +379,7 @@ export default function JobDetailsPage() {
                     
                     {job.description?.company_information && (
                       <div>
-                        <h3 className="font-medium text-secondary-700">About</h3>
+                        <h3 className="font-medium text-secondary-700">Om företaget</h3>
                         <p className="text-secondary-600">{job.description.company_information}</p>
                       </div>
                     )}
@@ -394,7 +394,7 @@ export default function JobDetailsPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
-                      Location
+                      Arbetsplats
                     </h2>
                     
                     <div className="space-y-1.5 text-secondary-600">

@@ -27,7 +27,7 @@ export default function AdvancedResultsPage() {
   
   if (loading) {
     return (
-      <Layout title="Loading Results...">
+      <Layout title="Laddar resultat...">
         <div className="container mx-auto px-4 py-16">
           <div className="flex justify-center">
             <svg className="animate-spin h-12 w-12 text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -42,16 +42,16 @@ export default function AdvancedResultsPage() {
   
   if (!results || !results.hits || results.hits.length === 0) {
     return (
-      <Layout title="No Results Found">
+      <Layout title="Inga resultat hittades">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center">
-            <h1 className="text-2xl font-bold mb-4">No Results Found</h1>
-            <p className="mb-6">Try adjusting your search criteria to find more jobs</p>
+            <h1 className="text-2xl font-bold mb-4">Inga resultat hittades</h1>
+            <p className="mb-6">Försök justera dina sökkriterier för att hitta fler jobb</p>
             <Link 
               href="/advanced-search"
               className="inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg shadow hover:bg-primary-700 transition-colors"
             >
-              Back to Search
+              Tillbaka till sökningen
             </Link>
           </div>
         </div>
@@ -60,17 +60,17 @@ export default function AdvancedResultsPage() {
   }
   
   return (
-    <Layout title="Advanced Search Results">
+    <Layout title="Sökresultat">
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold">
-            {results.total} Jobs Found
+            {results.total} jobb hittades
           </h1>
           <Link 
             href="/advanced-search"
             className="text-primary-600 hover:text-primary-800"
           >
-            Modify Search
+            Ändra sökning
           </Link>
         </div>
         
@@ -78,7 +78,7 @@ export default function AdvancedResultsPage() {
         {results.sources && results.sources.length > 0 && (
           <div className="mb-6">
             <p className="text-sm text-gray-500">
-              Sources: 
+              Källor: 
               {results.sources.includes('jobad') && (
                 <span className="ml-2 px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full text-xs">
                   JobAd API

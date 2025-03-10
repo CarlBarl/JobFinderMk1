@@ -28,10 +28,10 @@ export default function Header() {
           {/* Desktop navigation */}
           <nav className="hidden md:block">
             <ul className="flex space-x-6">
-              <li><Link href="/" className="hover:underline">Home</Link></li>
-              <li><Link href="/search" className="hover:underline">Jobs</Link></li>
-              <li><Link href="/tips" className="hover:underline">Job Search Tips</Link></li>
-              <li><Link href="/about" className="hover:underline">About</Link></li>
+              <li><Link href="/" className="hover:underline">Hem</Link></li>
+              <li><Link href="/search" className="hover:underline">Lediga jobb</Link></li>
+              <li><Link href="/tips" className="hover:underline">Jobbsökartips</Link></li>
+              <li><Link href="/about" className="hover:underline">Om oss</Link></li>
             </ul>
           </nav>
         </div>
@@ -40,10 +40,10 @@ export default function Header() {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4">
             <ul className="flex flex-col space-y-2">
-              <li><Link href="/" className="block hover:bg-blue-700 px-3 py-2 rounded">Home</Link></li>
-              <li><Link href="/search" className="block hover:bg-blue-700 px-3 py-2 rounded">Jobs</Link></li>
-              <li><Link href="/tips" className="block hover:bg-blue-700 px-3 py-2 rounded">Job Search Tips</Link></li>
-              <li><Link href="/about" className="block hover:bg-blue-700 px-3 py-2 rounded">About</Link></li>
+              <li><Link href="/" className="block hover:bg-blue-700 px-3 py-2 rounded">Hem</Link></li>
+              <li><Link href="/search" className="block hover:bg-blue-700 px-3 py-2 rounded">Lediga jobb</Link></li>
+              <li><Link href="/tips" className="block hover:bg-blue-700 px-3 py-2 rounded">Jobbsökartips</Link></li>
+              <li><Link href="/about" className="block hover:bg-blue-700 px-3 py-2 rounded">Om oss</Link></li>
             </ul>
           </nav>
         )}

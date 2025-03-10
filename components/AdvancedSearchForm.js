@@ -40,11 +40,10 @@ export default function AdvancedSearchForm() {
     try {
       let results;
       
-      // Call the appropriate advanced search function based on searchType
       switch (searchType) {
         case 'student':
           results = await searchStudentJobs({
-            keyword: '', // Could add a keyword field
+            keyword: '',
             location,
             field,
             partTime: options.partTime,
@@ -75,14 +74,12 @@ export default function AdvancedSearchForm() {
           break;
       }
       
-      // Store results in sessionStorage to access them on the results page
       if (results) {
         sessionStorage.setItem('advancedSearchResults', JSON.stringify(results));
         router.push('/advanced-results');
       }
     } catch (error) {
-      console.error('Advanced search error:', error);
-      // Handle error
+      console.error('Sökfel:', error);
     } finally {
       setLoading(false);
     }
@@ -91,45 +88,45 @@ export default function AdvancedSearchForm() {
   return (
     <form onSubmit={handleSearch} className="space-y-6">
       <div>
-        <label className="block text-sm font-medium text-gray-700">Search Type</label>
+        <label className="block text-sm font-medium text-gray-700">Söktyp</label>
         <select 
           value={searchType} 
           onChange={(e) => setSearchType(e.target.value)}
           className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary-500 focus:ring-primary-500"
         >
-          <option value="student">Student Jobs</option>
-          <option value="internship">Internships</option>
-          <option value="graduate">Recent Graduate Jobs</option>
-          <option value="seasonal">Seasonal Jobs</option>
-          <option value="flexible">Flexible Hours Jobs</option>
-          <option value="noExperience">No Experience Required</option>
+          <option value="student">Studentjobb</option>
+          <option value="internship">Praktikplatser</option>
+          <option value="graduate">Nyexaminerade</option>
+          <option value="seasonal">Säsongsarbete</option>
+          <option value="flexible">Flexibla arbetstider</option>
+          <option value="noExperience">Ingen erfarenhet krävs</option>
         </select>
       </div>
       
       <div>
-        <label className="block text-sm font-medium text-gray-700">Field/Industry</label>
+        <label className="block text-sm font-medium text-gray-700">Bransch/Område</label>
         <input
           type="text"
           value={field}
           onChange={(e) => setField(e.target.value)}
           className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-          placeholder="e.g., IT, Healthcare, Marketing"
+          placeholder="t.ex. IT, Vård, Marknadsföring"
         />
       </div>
       
       <div>
-        <label className="block text-sm font-medium text-gray-700">Location</label>
+        <label className="block text-sm font-medium text-gray-700">Plats</label>
         <input
           type="text"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           className="mt-1 block w-full rounded-md border border-gray-300 py-2 px-3 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-          placeholder="e.g., Stockholm, Göteborg"
+          placeholder="t.ex. Stockholm, Göteborg"
         />
       </div>
       
       <div className="space-y-4">
-        <p className="block text-sm font-medium text-gray-700">Options</p>
+        <p className="block text-sm font-medium text-gray-700">Alternativ</p>
         
         <div className="flex flex-wrap gap-4">
           {searchType === 'student' && (
@@ -141,7 +138,7 @@ export default function AdvancedSearchForm() {
                   onChange={() => handleOptionChange('partTime')}
                   className="rounded border-gray-300 text-primary-600 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
                 />
-                <span className="ml-2 text-sm text-gray-700">Part-time</span>
+                <span className="ml-2 text-sm text-gray-700">Deltid</span>
               </label>
               
               <label className="inline-flex items-center">
@@ -151,7 +148,7 @@ export default function AdvancedSearchForm() {
                   onChange={() => handleOptionChange('entryLevel')}
                   className="rounded border-gray-300 text-primary-600 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
                 />
-                <span className="ml-2 text-sm text-gray-700">Entry-level</span>
+                <span className="ml-2 text-sm text-gray-700">Första jobbet</span>
               </label>
               
               <label className="inline-flex items-center">
@@ -161,7 +158,7 @@ export default function AdvancedSearchForm() {
                   onChange={() => handleOptionChange('internship')}
                   className="rounded border-gray-300 text-primary-600 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
                 />
-                <span className="ml-2 text-sm text-gray-700">Internships</span>
+                <span className="ml-2 text-sm text-gray-700">Praktik</span>
               </label>
             </>
           )}
@@ -174,7 +171,7 @@ export default function AdvancedSearchForm() {
                 onChange={() => handleOptionChange('paid')}
                 className="rounded border-gray-300 text-primary-600 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
               />
-              <span className="ml-2 text-sm text-gray-700">Paid Only</span>
+              <span className="ml-2 text-sm text-gray-700">Endast betald praktik</span>
             </label>
           )}
           
@@ -185,7 +182,7 @@ export default function AdvancedSearchForm() {
               onChange={() => handleOptionChange('remote')}
               className="rounded border-gray-300 text-primary-600 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
             />
-            <span className="ml-2 text-sm text-gray-700">Remote Work</span>
+            <span className="ml-2 text-sm text-gray-700">Distansarbete</span>
           </label>
         </div>
       </div>
@@ -196,7 +193,7 @@ export default function AdvancedSearchForm() {
           disabled={loading}
           className="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {loading ? 'Searching...' : 'Search Jobs'}
+          {loading ? 'Söker...' : 'Sök jobb'}
         </button>
       </div>
     </form>

@@ -5,14 +5,14 @@ import Link from 'next/link';
 export default function AboutPage() {
   return (
     <Layout 
-      title="About StudentJobs | Find Jobs for Students in Sweden"
-      description="Learn about StudentJobs, a platform dedicated to helping students find jobs, internships, and part-time work across Sweden"
+      title="Om StudentJobs | Hitta studentjobb i Sverige"
+      description="Lär dig mer om StudentJobs, en plattform dedikerad till att hjälpa studenter hitta jobb, praktik och deltidsarbete i Sverige"
     >
       <div className="bg-blue-600 text-white py-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">About StudentJobs</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">Om StudentJobs</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            Connecting students with opportunities across Sweden
+            Vi kopplar samman studenter med möjligheter i hela Sverige
           </p>
         </div>
       </div>
@@ -20,69 +20,69 @@ export default function AboutPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto">
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Our Mission</h2>
+            <h2 className="text-2xl font-bold mb-6">Vår mission</h2>
             <div className="bg-white rounded-lg shadow-md p-6">
               <p className="mb-4">
-                StudentJobs is dedicated to helping students find meaningful employment opportunities that complement their studies and help launch their careers. We understand the unique challenges students face when balancing academic commitments with work experience needs.
+                StudentJobs är dedikerad till att hjälpa studenter hitta meningsfulla arbetsmöjligheter som kompletterar deras studier och hjälper till att starta deras karriärer. Vi förstår de unika utmaningar som studenter möter när de ska balansera akademiska åtaganden med behovet av arbetslivserfarenhet.
               </p>
               <p className="mb-4">
-                Our platform aggregates job listings from across Sweden, making it easy for students to discover part-time positions, internships, summer jobs, and entry-level opportunities that fit their skills, interests, and schedule constraints.
+                Vår plattform samlar jobbannonser från hela Sverige och gör det enkelt för studenter att upptäcka deltidstjänster, praktikplatser, sommarjobb och entry-level möjligheter som matchar deras kompetenser, intressen och scheman.
               </p>
               <p>
-                By providing a specialized job search experience tailored to student needs, we aim to bridge the gap between education and employment, helping students gain valuable work experience while completing their studies.
+                Genom att erbjuda en specialiserad jobbsökarupplevelse anpassad för studenters behov, strävar vi efter att överbrygga klyftan mellan utbildning och arbetsliv, och hjälpa studenter få värdefull arbetslivserfarenhet under studietiden.
               </p>
             </div>
           </section>
           
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">How It Works</h2>
+            <h2 className="text-2xl font-bold mb-6">Hur det fungerar</h2>
             <div className="bg-white rounded-lg shadow-md p-6">
               <p className="mb-4">
-                StudentJobs uses the Swedish Public Employment Service's JobAd API to access job listings from across Sweden. This API provides a comprehensive database of job opportunities from multiple sources, including:
+                StudentJobs använder Arbetsförmedlingens JobAd API för att få tillgång till jobbannonser från hela Sverige. Detta API ger en omfattande databas med arbetsmöjligheter från flera källor, inklusive:
               </p>
               
               <ul className="list-disc pl-6 mb-4 space-y-2">
-                <li>The official Swedish employment service (Arbetsförmedlingen)</li>
-                <li>Major job boards across Sweden</li>
-                <li>Direct employer listings</li>
+                <li>Arbetsförmedlingen</li>
+                <li>Större jobbportaler i Sverige</li>
+                <li>Direktannonser från arbetsgivare</li>
               </ul>
               
               <p className="mb-4">
-                We've built specialized search tools and filters that help students quickly find relevant opportunities. Our platform includes:
+                Vi har byggt specialiserade sökverktyg och filter som hjälper studenter att snabbt hitta relevanta möjligheter. Vår plattform inkluderar:
               </p>
               
               <ul className="list-disc pl-6 mb-4 space-y-2">
-                <li>Student-specific search filters (part-time, internships, no experience required)</li>
-                <li>Location-based searching</li>
-                <li>Field and industry filters</li>
-                <li>Remote work options</li>
-                <li>Helpful job search tips and resources</li>
+                <li>Studentspecifika sökfilter (deltid, praktik, ingen erfarenhet krävs)</li>
+                <li>Platsbaserad sökning</li>
+                <li>Bransch- och områdesfilter</li>
+                <li>Distansarbetesalternativ</li>
+                <li>Hjälpsamma jobbsökartips och resurser</li>
               </ul>
               
               <p>
-                When you find a job you're interested in, we'll connect you directly to the application process through the original job posting. Our goal is to simplify your job search, not complicate it with additional steps.
+                När du hittar ett jobb du är intresserad av kopplar vi dig direkt till ansökningsprocessen genom den ursprungliga jobbannonsen. Vårt mål är att förenkla din jobbsökning, inte komplicera den med extra steg.
               </p>
             </div>
           </section>
           
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">API Information</h2>
+            <h2 className="text-2xl font-bold mb-6">API-information</h2>
             <div className="bg-white rounded-lg shadow-md p-6">
               <p className="mb-4">
-                The data on StudentJobs is powered by the JobAd API, a service provided by the Swedish Public Employment Service (Arbetsförmedlingen) and JobTech Development.
+                Datan på StudentJobs drivs av JobAd API, en tjänst som tillhandahålls av Arbetsförmedlingen och JobTech Development.
               </p>
               
-              <h3 className="text-lg font-semibold mt-4 mb-2">Key Features of the API:</h3>
+              <h3 className="text-lg font-semibold mt-4 mb-2">API:ets huvudfunktioner:</h3>
               <ul className="list-disc pl-6 mb-4 space-y-2">
-                <li>Free to use with no registration required</li>
-                <li>Contains job listings from multiple sources in one unified API</li>
-                <li>Updated daily with fresh listings</li>
-                <li>Uses machine learning for occupation classification</li>
-                <li>Implements the Swedish classification system for occupations (SSYK)</li>
+                <li>Gratis att använda utan registrering</li>
+                <li>Innehåller jobbannonser från flera källor i ett enhetligt API</li>
+                <li>Uppdateras dagligen med nya annonser</li>
+                <li>Använder maskininlärning för yrkesklassificering</li>
+                <li>Implementerar det svenska klassificeringssystemet för yrken (SSYK)</li>
               </ul>
               
               <p className="mb-4">
-                For developers interested in learning more about the JobAd API or building their own applications with it, visit:
+                För utvecklare som är intresserade av att lära sig mer om JobAd API eller bygga egna applikationer med det, besök:
               </p>
               
               <ul className="list-disc pl-6 space-y-2">
@@ -111,17 +111,17 @@ export default function AboutPage() {
           </section>
           
           <section>
-            <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
+            <h2 className="text-2xl font-bold mb-6">Kontakta oss</h2>
             <div className="bg-white rounded-lg shadow-md p-6">
               <p className="mb-4">
-                We value your feedback and suggestions for improving StudentJobs. If you have questions, encounter issues, or want to share ideas, please contact us:
+                Vi värdesätter din feedback och förslag för att förbättra StudentJobs. Om du har frågor, stöter på problem eller vill dela idéer, kontakta oss:
               </p>
               
               <div className="bg-gray-50 p-4 rounded-md">
-                <p className="font-medium">Email:</p>
+                <p className="font-medium">E-post:</p>
                 <p className="mb-3">support@studentjobs-example.se</p>
                 
-                <p className="font-medium">Follow us:</p>
+                <p className="font-medium">Följ oss:</p>
                 <div className="flex space-x-4 mt-2">
                   <a href="#" className="text-blue-600 hover:text-blue-800">
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -153,7 +153,7 @@ export default function AboutPage() {
               href="/"
               className="inline-block bg-blue-600 text-white py-3 px-8 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
-              Return to Home
+              Tillbaka till startsidan
             </Link>
           </div>
         </div>
