@@ -10,10 +10,11 @@ export default function SearchForm({ initialValues = {} }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Build query params, removing empty values
+    // Build query params as object (not URLSearchParams)
     const params = {};
     
     if (searchQuery.trim()) {
+      // Don't manually encode - let Next.js handle it properly
       params.q = searchQuery.trim();
     }
     
