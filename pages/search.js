@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
 import SearchForm from '../components/SearchForm';
 import JobCard from '../components/JobCard';
-import { searchJobSearchAPI } from '../lib/jobApi';
+import { enhancedJobSearch } from '../lib/jobApi';
 
 export default function SearchPage({ initialResults, searchParams }) {
   const router = useRouter();
@@ -46,12 +46,18 @@ export default function SearchPage({ initialResults, searchParams }) {
       
       try {
         const offset = (currentPage - 1) * jobsPerPage;
+        console.log('Fetching page:', currentPage, 'with offset:', offset);
         
-        const data = await searchJobSearchAPI({
+        const data = await enhancedJobSearch({
           q: router.query.q || '',
           remote: router.query.remote === 'true',
           limit: jobsPerPage,
-          offset
+          offset: offset
+        });
+        
+        console.log('Search results:', {
+          total: data.total,
+          hits: data.hits?.length || 0
         });
 
         if (data.error) {
@@ -240,11 +246,17 @@ export default function SearchPage({ initialResults, searchParams }) {
 
 export async function getServerSideProps({ query }) {
   try {
-    const results = await searchJobSearchAPI({
+    const page = parseInt(query.page || '1', 10);
+    const limit = 15;
+    const offset = (page - 1) * limit;
+    
+    console.log('Server side - page:', page, 'offset:', offset);
+    
+    const results = await enhancedJobSearch({
       q: query.q || '',
       remote: query.remote === 'true',
-      limit: 15,
-      offset: ((parseInt(query.page || '1', 10) - 1) * 15)
+      limit: limit,
+      offset: offset
     });
     
     return {

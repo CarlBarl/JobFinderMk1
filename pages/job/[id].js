@@ -78,7 +78,7 @@ export default function JobDetailsPage() {
   
   return (
     <Layout 
-      title={job ? `${job.headline} | StudentJobs` : 'Laddar jobbdetaljer'}
+      title={job ? `${job.headline} | StudentJobb` : 'Laddar jobbdetaljer'}
       description={job ? `${job.headline} hos ${job.employer?.name || 'Företaget'} - Sök nu!` : 'Jobbdetaljer'}
     >
       {/* Back Button */}
@@ -132,13 +132,13 @@ export default function JobDetailsPage() {
             {/* Job Header */}
             <div className="bg-white rounded-xl shadow-soft-md p-8 mb-8 border border-gray-100">
               <div className="flex flex-col md:flex-row md:items-start">
-                {/* Logo */}
-                <div className="w-20 h-20 bg-primary-50 rounded-lg mr-6 mb-5 md:mb-0 relative overflow-hidden flex-shrink-0 border border-gray-100">
+                {/* Logo - Increased size */}
+                <div className="w-28 h-28 bg-primary-50 rounded-lg mr-6 mb-5 md:mb-0 relative overflow-hidden flex-shrink-0 border border-gray-100">
                   <Image 
                     src={logoSrc || '/file.svg'}
                     alt={`${job.employer?.name || 'Företaget'} logotyp`}
-                    width={80}
-                    height={80}
+                    width={112}
+                    height={112}
                     className="object-contain p-2"
                     onError={() => {
                       setLogoSrc('/file.svg');

@@ -5,12 +5,12 @@ import Link from 'next/link';
 export default function AboutPage() {
   return (
     <Layout 
-      title="Om StudentJobs | Hitta studentjobb i Sverige"
-      description="Lär dig mer om StudentJobs, en plattform dedikerad till att hjälpa studenter hitta jobb, praktik och deltidsarbete i Sverige"
+      title="Om StudentJobb | Hitta studentjobb i Sverige"
+      description="Lär dig mer om StudentJobb, en plattform dedikerad till att hjälpa studenter hitta jobb, praktik och deltidsarbete i Sverige"
     >
       <div className="bg-blue-600 text-white py-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">Om StudentJobs</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">Om StudentJobb</h1>
           <p className="text-xl max-w-3xl mx-auto">
             Vi kopplar samman studenter med möjligheter i hela Sverige
           </p>
@@ -20,16 +20,16 @@ export default function AboutPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto">
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Vår mission</h2>
+            <h2 className="text-2xl font-bold mb-6">Vår story</h2>
             <div className="bg-white rounded-lg shadow-md p-6">
               <p className="mb-4">
-                StudentJobs är dedikerad till att hjälpa studenter hitta meningsfulla arbetsmöjligheter som kompletterar deras studier och hjälper till att starta deras karriärer. Vi förstår de unika utmaningar som studenter möter när de ska balansera akademiska åtaganden med behovet av arbetslivserfarenhet.
+                StudentJobb.se startades för att vi helt enkelt tyckte att det var alldeles för krångligt att hitta jobb enligt de traditionella hemsidorna. Du vet, där man behöver skapa ett konto, fylla i hundra olika fält och navigera genom en labyrint av kategorier bara för att hitta ett deltidsjobb.
               </p>
               <p className="mb-4">
-                Vår plattform samlar jobbannonser från hela Sverige och gör det enkelt för studenter att upptäcka deltidstjänster, praktikplatser, sommarjobb och entry-level möjligheter som matchar deras kompetenser, intressen och scheman.
+                En kväll satt vi på en pizzeria (med för mycket studentlånepengar kvar) och klagade på hur jobbigt det var att hitta jobb som faktiskt passade våra scheman. Efter den tredje ölen insåg vi - varför inte skapa något bättre själva? Så föddes StudentJobb!
               </p>
               <p>
-                Genom att erbjuda en specialiserad jobbsökarupplevelse anpassad för studenters behov, strävar vi efter att överbrygga klyftan mellan utbildning och arbetsliv, och hjälpa studenter få värdefull arbetslivserfarenhet under studietiden.
+                Vår filosofi är enkel: Jobbsökande ska inte kännas som att deklarera, det ska kännas som att swipa på Tinder - snabbt, enkelt, och ibland till och med lite kul. Så släpp prestationsångesten och börja hitta jobb som faktiskt låter dig ha ett liv bredvid studierna!
               </p>
             </div>
           </section>
@@ -38,7 +38,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold mb-6">Hur det fungerar</h2>
             <div className="bg-white rounded-lg shadow-md p-6">
               <p className="mb-4">
-                StudentJobs använder Arbetsförmedlingens JobAd API för att få tillgång till jobbannonser från hela Sverige. Detta API ger en omfattande databas med arbetsmöjligheter från flera källor, inklusive:
+                StudentJobb använder Arbetsförmedlingens JobAd API för att få tillgång till jobbannonser från hela Sverige. Detta API ger en omfattande databas med arbetsmöjligheter från flera källor, inklusive:
               </p>
               
               <ul className="list-disc pl-6 mb-4 space-y-2">
@@ -69,7 +69,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold mb-6">API-information</h2>
             <div className="bg-white rounded-lg shadow-md p-6">
               <p className="mb-4">
-                Datan på StudentJobs drivs av JobAd API, en tjänst som tillhandahålls av Arbetsförmedlingen och JobTech Development.
+                Datan på StudentJobb drivs av JobAd API, en tjänst som tillhandahålls av Arbetsförmedlingen och JobTech Development.
               </p>
               
               <h3 className="text-lg font-semibold mt-4 mb-2">API:ets huvudfunktioner:</h3>
@@ -114,12 +114,12 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold mb-6">Kontakta oss</h2>
             <div className="bg-white rounded-lg shadow-md p-6">
               <p className="mb-4">
-                Vi värdesätter din feedback och förslag för att förbättra StudentJobs. Om du har frågor, stöter på problem eller vill dela idéer, kontakta oss:
+                Vi värdesätter din feedback och förslag för att förbättra StudentJobb. Om du har frågor, stöter på problem eller vill dela idéer, kontakta oss:
               </p>
               
               <div className="bg-gray-50 p-4 rounded-md">
                 <p className="font-medium">E-post:</p>
-                <p className="mb-3">support@studentjobs-example.se</p>
+                <p className="mb-3">support@studentjobb-example.se</p>
                 
                 <p className="font-medium">Följ oss:</p>
                 <div className="flex space-x-4 mt-2">

@@ -20,11 +20,11 @@ export default function Home() {
         <div className="container mx-auto px-4 py-16 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in">
-              Hitta ditt perfekta studentjobb
+              Nu är det inte längre krångligt att söka jobb
             </h1>
             
             <p className="text-xl md:text-2xl mb-12 text-primary-50/90 animate-slide-up">
-              Din framtid börjar här - Utforska tusentals studentvänliga jobb i Sverige
+              Skriv helt enkelt in vad du söker efter, och var du vill ha tjänsten. Om du vill se var vinden tar dig? Skriv inte var utan endast vad. Lycka till!
             </p>
             
             <div className="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl shadow-soft-lg animate-slide-up border border-white/20">

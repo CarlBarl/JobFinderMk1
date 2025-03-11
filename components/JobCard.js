@@ -32,7 +32,7 @@ export default function JobCard({ job }) {
               <img
                 src={job.logotype_url}
                 alt={`${job.employer?.name} logotyp`}
-                className="w-12 h-12 object-contain"
+                className="w-16 h-16 object-contain"
               />
             )}
           </div>
